@@ -1,0 +1,17 @@
+body{
+  background: #fff;
+}
+.box {
+  transition: box-shadow .3s;
+  width: 304px;
+  height: 432px;
+  margin: 50px;
+  border-radius:5px;
+  border: 1px solid #ccc;
+  background: #fff;
+  float: left;
+  
+}
+.box:hover {
+  box-shadow: 0 0 20px rgba(33,33,33,.2);
+}
