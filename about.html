@@ -1,60 +1,80 @@
 <!DOCTYPE html>
-<html xmlns:width="http://www.w3.org/1999/xhtml">
+<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="basic.css">
-  <link rel="stylesheet" href="about.css">
-  <link rel="stylesheet" href="scrollbar.css">
+    <head>
+        <base href="/">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rick's Translation | About</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/custombutton.css">
+        <link rel="stylesheet" href="styles/scrollbar.css">
+        <!--Favicon-->
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    </head>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
 
-  <title>Rick's Translations</title>
 
-<body>
-  <div class="w3-bar w3-white w3-text-indigo">
-    <a href="index.html"
-      class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-white w3-hover-text-light-blue">Home</a>
-    <a href="resources.html"
-      class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-white w3-hover-text-light-blue">Resources</a>
-    <a href="about.html"
-      class="w3-bar-item w3-button w3-hover-none w3-border-white w3-bottombar w3-hover-border-white w3-hover-text-light-blue">About</a>
-  </div>
-  <div class="w3-panel w3-container w3-left w3-animate-left">
 
-    <h3>About</h3>
-    <h4 style=font-weight:normal>Translating manga to practice Japanese, I'm still learning Japanese so the translations
-      aren't the best but I'm trying to get better. Feel free to re-translate anything I have translated. I don't own
-      any of the translated works.</h4>
-    <div class="column">
-      <div class="card">
-        <img src=" https://c.tenor.com/pRbjCyveJvsAAAAC/fate-ubw.gif" style="height:40%;width:40%" alt="Profile Image">
-        <div class="w3-container">
-          <h2>Rick</h2>
-          <p class="title">Non-professional Translator </p>
-          <p>Australian-Japanese anime-manga enthusiast </p>
-          <p>Email: riku@myself.com</p>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Rick's Translations</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/">Home</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="/resources.html">Resources</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/about.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br>
+        <div style="margin-left:15px">
+            <h1>About</h1>
+            <img src="https://c.tenor.com/pRbjCyveJvsAAAAC/fate-ubw.gif"
+                style="object-fit:cover;width:480px;height:auto;border-radius: 1%;" class="card-img-top" />
 
-          <img src="https://discord.c99.nl/widget/theme-1/363552208270262277.png" style="height:75px;width:auto"> <br>
-          <a style="font-family:'Arial'" href="https://myanimelist.net/profile/ItzElite">MyAnimeList</a>
+            <h3 class="card-title">Rick</h3>
+            <p class="fs-4 text-muted">Non-professional Translator & Australian-Japanese anime-manga enthusiast
+            </p>
+            <p class="fs-6">Translating manga to practice Japanese, I'm still learning Japanese so the
+                translations
+                aren't the best but I'm trying to get better. Feel free to re-translate anything I have
+                translated. I
+                don't own any of the translated works.
+                <br>
+                Find me:
+                <br>
+                Email: <a href="mailto:riku@myself.com">riku@myself.com</a>
+                <br>
+                <a target="_blank" href="https://myanimelist.net/profile/ItzElite">MyAnimeList</a>
+            </p>
+            <img
+                src="https://lanyard.cnrad.dev/api/363552208270262277?theme=dark&bg=222&idleMessage=Probably%20reading%20manga" />
 
         </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
-  <div class="column">
 
 
-    <br>
 
-  </div>
-</body>
+
+    </body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <base href="/">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="#chapterTitle">Chapter Title</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+            crossorigin="anonymous"></script>
+        <!--Import jquery-->
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/custombutton.css">
+        <link rel="stylesheet" href="styles/scrollbar.css">
+        <!--Favicon-->
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+
+        <script>
+            function getUrlVars() {
+                var vars = [], hash;
+                var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+                for (var i = 0; i < hashes.length; i++) {
+                    hash = hashes[i].split('=');
+                    vars.push(hash[0]);
+                    vars[hash[0]] = hash[1];
+                }
+                return vars;
+            }
+
+
+            var queryParams = getUrlVars();
+            console.log(queryParams);
+            if (queryParams["chapter"] == undefined && queryParams["series"] == undefined) {
+                console.log("No Chapter was specified");
+            }
+            $.getJSON(`chapters\\${queryParams["series"]}\\${queryParams["chapter"]}.json`, function (data) {
+                //console.log(data.pages)//Array of our pages
+                data.pages.forEach((page) => {
+                    //foreach page
+                    $("#pages").append(`<img style="width:50vw;height:auto" src=${page} />`)
+
+                })
+                console.log(`Chapter title is: ${data.title}`)
+                $("#chapterTitle").html(`${data.title}`)
+
+            });
+
+        </script>
+    </head>
+
+
+
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Rick's Translations</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/">Home</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="/resources.html">Resources</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/about.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br>
+        <div style="margin-left:15px">
+            <h1 id="chapterTitle">Chapter Title</h1>
+            <br>
+            <center>
+                <div id="pages"></div>
+            </center>
+        </div>
+
+
+
+
+    </body>
+
+</html>
