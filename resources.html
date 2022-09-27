@@ -25,14 +25,18 @@
         <script>
 
             $.getJSON(`resources.json`, function (data) {
+                var row = 1;
                 data.forEach((series) => {//Loop for each series
+
                     series.chapters.forEach((chapter) => {
                         //Loop foreach chapter
                         $("#tableContent").append(`<tr>
+                            <td>${row}</td>
                             <td>${series.title}</td>
                             <td>${chapter.name}</td>
                             <td><a href="${chapter.url}" target="_blank"> ${chapter.url}</a></td>
                         </tr>`)
+                        row++;
                     })
                     //  $("#pages").append(`<img style="width:50vw;height:auto" src=${page} />`)
                     //$("#chapterTitle").html(`${data.title}`)
@@ -79,6 +83,7 @@
                 <table id="table" class="table text-white">
                     <thead>
                         <tr>
+                            <th scope="col">#</th>
                             <th scope="col">Series</th>
                             <th scope="col">Chapter</th>
                             <th scope="col">Download Link</th>
