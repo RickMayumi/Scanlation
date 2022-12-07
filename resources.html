@@ -1,104 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <base href="/">
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Resources</title>
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-            crossorigin="anonymous"></script>
-        <!--Import jquery-->
-        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <!--Import jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
-        <link rel="stylesheet" href="styles/style.css">
-        <link rel="stylesheet" href="styles/custombutton.css">
-        <link rel="stylesheet" href="styles/scrollbar.css">
-        <!--Favicon-->
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/custombutton.css">
+    <link rel="stylesheet" href="styles/scrollbar.css">
+    <!--Favicon-->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 
-        <script>
+    <script>
 
-            $.getJSON(`resources.json`, function (data) {
-                var row = 1;
-                data.forEach((series) => {//Loop for each series
+        $.getJSON(`resources.json`, function (data) {
+            var row = 1;
+            data.forEach((series) => {//Loop for each series
 
-                    series.chapters.forEach((chapter) => {
-                        //Loop foreach chapter
-                        $("#tableContent").append(`<tr>
+                series.chapters.forEach((chapter) => {
+                    //Loop foreach chapter
+                    $("#tableContent").append(`<tr>
                             <td>${row}</td>
                             <td>${series.title}</td>
                             <td>${chapter.name}</td>
                             <td><a href="${chapter.url}" target="_blank"> ${chapter.url}</a></td>
                         </tr>`)
-                        row++;
-                    })
-                    //  $("#pages").append(`<img style="width:50vw;height:auto" src=${page} />`)
-                    //$("#chapterTitle").html(`${data.title}`)
+                    row++;
                 })
-                // console.log(`Chapter title is: ${data.title}`)
+                //  $("#pages").append(`<img style="width:50vw;height:auto" src=${page} />`)
+                //$("#chapterTitle").html(`${data.title}`)
+            })
+            // console.log(`Chapter title is: ${data.title}`)
 
 
-            });
+        });
 
-        </script>
-    </head>
-
-
+    </script>
+</head>
 
 
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">Rick's Translations</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/resources.html">Resources</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about.html">About</a>
-                        </li>
-                    </ul>
-                </div>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Rick's Translations</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  active" href="/resources.html">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html">About</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-        <br>
-        <div style="margin-left:15px">
-            <h1 id="chapterTitle"></h1>
-            <br>
-            <center>
-                <table id="table" class="table text-white">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Series</th>
-                            <th scope="col">Chapter</th>
-                            <th scope="col">Download Link</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableContent">
-                    </tbody>
-                </table>
-
-            </center>
         </div>
+    </nav>
+    <br>
+    <div style="margin-left:15px">
+        <h1 id="chapterTitle"></h1>
+        <br>
+        <center>
+            <table id="table" class="table text-white">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Series</th>
+                        <th scope="col">Chapter</th>
+                        <th scope="col">Download Link</th>
+                    </tr>
+                </thead>
+                <tbody id="tableContent">
+                </tbody>
+            </table>
+
+        </center>
+    </div>
 
 
 
 
-    </body>
+</body>
 
 </html>

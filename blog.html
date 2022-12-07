@@ -1,66 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <base href="/">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="#chapterTitle"></title>
+    <title>Rick's Translation | Home</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>
-    <!--Import jquery-->
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/custombutton.css">
     <link rel="stylesheet" href="styles/scrollbar.css">
     <!--Favicon-->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-
-    <script>
-        function getUrlVars() {
-            var vars = [], hash;
-            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-            for (var i = 0; i < hashes.length; i++) {
-                hash = hashes[i].split('=');
-                vars.push(hash[0]);
-                vars[hash[0]] = hash[1];
-            }
-            return vars;
-        }
-
-
-        var queryParams = getUrlVars();
-        // console.log(queryParams);
-        if (queryParams["chapter"] == null && queryParams["series"] == null) {
-            // console.log("No Chapter was specified");
-            $("#chapterTitle").html(`Unknown Chapter`);
-        }
-        else {
-            $.getJSON(`chapters\\${queryParams["series"]}\\${queryParams["chapter"]}.json`, function (data) {
-                //console.log(data.pages)//Array of our pages
-                data.pages.forEach((page) => {
-                    //foreach page
-                    $("#pages").append(`<img style="width:50vw;height:auto" src=${page} />`)
-
-                })
-                // console.log(`Chapter title is: ${data.title}`)
-                $("#chapterTitle").html(`${data.title}`)
-
-            });
-        }
-
-
-    </script>
 </head>
-
-
-
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -73,13 +28,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/resources.html">Resources</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/blog.html">Blog</a>
+                        <a class="nav-link  active" href="/blog.html">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/about.html">About</a>
@@ -88,18 +43,35 @@
             </div>
         </div>
     </nav>
-    <br>
-    <div style="margin-left:15px">
-        <h1 id="chapterTitle"></h1>
-        <br>
-        <center>
-            <div id="pages"></div>
-        </center>
-    </div>
-
-
-
-
 </body>
+<h3>My Japanese learning journal</h1>
+    <p>Hello to whoever is reading this, I'm going to write about my Japanese learning journey in this blog post. All
+        blog entries are from my MAL account
+        <br>
+        DD/MM/YY btw<br>
+        <br><br><u> 31/10/22 </u> - I currently know all N5 kanji and a fraction of N4, Current manga volumes read in
+        Japanese -
+        6
+        (mainly Yotsubato)
 
-</html>
+        <br><br><u>5/11/22</u> - Here's a picture of all the Japanese manga I've read so far, ordered left to right from
+        least
+        difficult to most. I've also been doing some Anki flashcards for the past month and a bit. An N4 kanji deck and
+        an overall kanji deck, I've probably learnt the same number of kanji I would of in 6 months in about 1 from
+        revising flashcards everyday (I revise around 100 a day which take ~10 min.
+
+
+        <br> <br><u>22/11/22</u> - I had my Japanese exam yesterday (year 10), it was pretty easy. It was mainly reading
+        comprehension
+        and an essay to write at the end. I hope to get a high mark (I got 98% on the last exam).
+
+        <br> <br> <u>3/12/22</u> - Hello everyone, I just got my exam result back yesterday with 97%, I got 21/20 on the
+        essay
+        writing
+        sections because I guess mine was really a high standard lol.
+
+        <br> <br> <u>6/12/22</u> - I've been making some powerpoints on content we learn in class which I show to my
+        classmates,
+        they are
+        fun to make
+    </p>
